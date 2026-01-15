@@ -1,14 +1,3 @@
-#Authors: Haris Shah and Waleed Ghufran
-#Date: Nov 12, 2020
-#Program Name: MortalScape
-#Course Code: ICS5U1
-#Work Division: Waleed Ghufran: Created all graphics and the interface, created both toplevels, 
-#               player movement, placement of blocks and coins. As well as close functions and life functions.
-#               Haris Shah: Programmed Collision, buttons, classes, place spike function, clear function, 
-#               reset function, keybinds, fall function and sounds.
-
-
-
 from tkinter import Tk, Toplevel, Button, Label, Frame, Canvas, PhotoImage, messagebox, font, ttk
 from src.player import Player
 from src.block import Block
