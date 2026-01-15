@@ -6,7 +6,7 @@ class FinishPoint:
         self.__canvas = canvasarg
         self.__x = x
         self.__y = y
-        self.__img = PhotoImage(file = 'New folder/FlagLeft.png')
+        self.__img = PhotoImage(file = './img/FlagLeft.png')
         self.__height = self.__img.height()
         self.__width = self.__img.width()
         self.__placed = False

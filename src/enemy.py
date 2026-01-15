@@ -6,7 +6,7 @@ class Enemy:
         self.__canvas = canvasarg
         self.__x = x
         self.__y = y
-        self.__img = PhotoImage(file = 'New folder/SpikeBall.png')
+        self.__img = PhotoImage(file = './img/SpikeBall.png')
         self.__height = self.__img.height()
         self.__width = self.__img.width()
         #create variable to check status of the enemy
@@ -20,7 +20,6 @@ class Enemy:
         self.__enemy = self.__canvas.create_image(self.__x, self.__y, image = self.__img, anchor = 'nw')
     #initialize a function which removes the enemy from the canvas    
     def removeEnemy(self):
-        print('f')
         self.__canvas.delete(self.__enemy)
     #create a function which moves the enemy    
     def move(self, x = 5):

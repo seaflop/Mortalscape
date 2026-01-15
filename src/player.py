@@ -7,7 +7,7 @@ class Player:
         self.__canvas = canvasarg
         self.__x = x
         self.__y = y
-        self.__img = PhotoImage(file = 'New folder/PlayerRight.png')
+        self.__img = PhotoImage(file = './img/PlayerRight.png')
         self.__height = self.__img.height()
         self.__width = self.__img.width()
         self.__player = self.__canvas.create_image(self.__x, self.__y, image = self.__img, anchor = 'sw')

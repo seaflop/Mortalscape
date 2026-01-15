@@ -10,11 +10,11 @@
 
 
 from tkinter import Tk, Toplevel, Button, Label, Frame, Canvas, PhotoImage, messagebox, font, ttk
-from Player import Player
-from Block import Block
-from Enemy import Enemy
-from Coins import Coins
-from FinishPoint import FinishPoint
+from src.player import Player
+from src.block import Block
+from src.enemy import Enemy
+from src.coins import Coins
+from src.finish_point import FinishPoint
 import pygame
 
 # Create a function that closes the program and destroys all windows
@@ -56,7 +56,7 @@ def close_game():
     gameScreen.bind('<KeyRelease>', dummy)
     gameBackground.config(cursor = '')
     player.setLocation(0, gameBackground.winfo_reqheight())
-    player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+    player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
     
     pygame.mixer.Sound.play(soundEffects[0])
     mainMenu.update()
@@ -124,7 +124,7 @@ def placeBlocks():
     gameBackground.config(cursor = 'hand2')
     # Set the player's location to the bottom right side and set the image to face the right
     player.setLocation(0, gameBackground.winfo_reqheight())
-    player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+    player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
     
 
 def placeOneBlock(event):
@@ -239,7 +239,7 @@ def placeEnemy():
     gameBackground.config(cursor = 'hand2')
     # Set the player's location to the bottom right side and set the image to face the right
     player.setLocation(0, gameBackground.winfo_reqheight())
-    player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+    player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
     
 def placeOneEnemy(event):
     global indexEnemy
@@ -349,7 +349,7 @@ def placeCoins():
     gameBackground.config(cursor = 'hand2')
     # Set the player's location to the bottom right side and set the image to face the right
     player.setLocation(0, gameBackground.winfo_reqheight())
-    player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+    player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
     
 def placeOneCoin(event):
     global indexCoins
@@ -528,7 +528,7 @@ def clearAll():
     resetAllButtons()
     
     player.setLocation(x = 0, y = gameBackground.winfo_reqheight())
-    player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+    player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
     
     for counter in range(len(blocksList)):
         blocksList[counter].removeBlock()
@@ -621,11 +621,11 @@ def onkeypress(event):
     if event.char == 'd' or event.char == 'D' or event.keysym == 'Right':
         if movingRight == True:
             moveRight()
-            player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+            player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
     elif event.char == 'a' or event.char == 'A' or event.keysym == 'Left':
         if movingLeft == True:
             moveLeft()
-            player.setImage(PhotoImage(file = 'New folder/PlayerLeft.png'))
+            player.setImage(PhotoImage(file = 'img/PlayerLeft.png'))
     elif event.keysym == 'space' or event.keysym == 'Up':
         playerJump()
         gameScreen.bind('<KeyPress>', onkeypress_withoutjump)
@@ -646,11 +646,11 @@ def onkeypress_withoutjump(event):
     if event.char == 'd' or event.char == 'D' or event.keysym == 'Right':
         if movingRight == True:
             moveRight()
-            player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+            player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
     elif event.char == 'a' or event.char == 'A' or event.keysym == 'Left':
         if movingLeft == True:
             moveLeft()
-            player.setImage(PhotoImage(file = 'New folder/PlayerLeft.png'))
+            player.setImage(PhotoImage(file = 'img/PlayerLeft.png'))
         
 def onkeyrelease(event):
     global movingLeft, movingRight, timerRight, timerLeft
@@ -813,7 +813,7 @@ def checkCollision():
                     pass
                 displayLives(lives)
                 gameBackground.delete(blood)
-                player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+                player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
                 break
             elif player.getY() - player.getHeight() + 5 >= enemyList[counter].getY() + 5 and player.getY() - player.getHeight() + 5 <= enemyList[counter].getY() + enemyList[counter].getHeight() - 5:
                 if score > 0:
@@ -832,7 +832,7 @@ def checkCollision():
                     pass
                 displayLives(lives)
                 gameBackground.delete(blood)
-                player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+                player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
                 break
             else:
                 pass
@@ -854,7 +854,7 @@ def checkCollision():
                     pass
                 displayLives(lives)
                 gameBackground.delete(blood)
-                player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+                player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
                 break
             elif player.getY() - player.getHeight() + 5 >= enemyList[counter].getY() + 5 and player.getY() - player.getHeight() + 5 <= enemyList[counter].getY() + enemyList[counter].getHeight() - 5:
                 if score > 0:
@@ -873,7 +873,7 @@ def checkCollision():
                     pass
                 displayLives(lives)
                 gameBackground.delete(blood)
-                player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+                player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
                 break
             else:
                 pass
@@ -895,7 +895,7 @@ def checkCollision():
                     pass
                 displayLives(lives)
                 gameBackground.delete(blood)
-                player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+                player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
                 break
             elif player.getY() - player.getHeight() + 5 >= enemyList[counter].getY() + 5 and player.getY() - player.getHeight() + 5 <= enemyList[counter].getY() + enemyList[counter].getHeight() - 5:
                 if score > 0:
@@ -914,7 +914,7 @@ def checkCollision():
                     pass
                 displayLives(lives)
                 gameBackground.delete(blood)
-                player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+                player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
                 break
             else:
                 pass
@@ -984,7 +984,7 @@ def checkCollision():
             if ans == True:
                 score = 0
                 gameBackground.itemconfig(displayScore, text = 'Score: ' + str(score))
-                player.setImage(PhotoImage(file = 'New folder/PlayerRight.png'))
+                player.setImage(PhotoImage(file = 'img/PlayerRight.png'))
                 lives = int(cboLives.get())
                 displayLives(lives)
                 resetAllButtons()
@@ -1013,8 +1013,8 @@ def checkCollision():
 WINDOW_WIDTH, WINDOW_HEIGHT = 1024, 768
 
 # Create a list of audio files
-audioFiles = ['Sounds/Button Sound.wav', 'Sounds/Plop.wav', 'Sounds/Jump.wav', 'Sounds/Death.wav', 'Sounds/Spike.wav', 
-    'Sounds/CoinCollected.mp3', 'Sounds/Ding.mp3', 'Sounds/Yay.mp3']
+audioFiles = ['sounds/Button Sound.wav', 'sounds/Plop.wav', 'sounds/Jump.wav', 'sounds/Death.wav', 'sounds/Spike.wav', 
+    'sounds/CoinCollected.mp3', 'sounds/Ding.mp3', 'sounds/Yay.mp3']
 # Create an empty list that will later be filled with sound objects
 soundEffects = [0] * 8
 # Initialize the pygame mixer
@@ -1038,14 +1038,14 @@ gameScreen.pack_propagate(False)
 gameScreen.withdraw()
 
 # Create various PhotoImages
-confettiImg = PhotoImage(file = "New folder/Confetti.png")
-gameNameImg = PhotoImage(file = "New folder/GameName.png")
-ArrowImg = PhotoImage(file = "New folder/Home.png")
-livesImg = PhotoImage(file = 'New folder/Heart.png')
-background = PhotoImage(file = 'New folder/Background.png')
-img_ground = PhotoImage(file = 'New folder/Ground.png')
-blood_img = PhotoImage(file = 'New folder/Blood.png')
-BeginImg = PhotoImage(file = "New folder/BeginImg.png")
+confettiImg = PhotoImage(file = "img/Confetti.png")
+gameNameImg = PhotoImage(file = "img/GameName.png")
+ArrowImg = PhotoImage(file = "img/Home.png")
+livesImg = PhotoImage(file = 'img/Heart.png')
+background = PhotoImage(file = 'img/Background.png')
+img_ground = PhotoImage(file = 'img/Ground.png')
+blood_img = PhotoImage(file = 'img/Blood.png')
+BeginImg = PhotoImage(file = "img/BeginImg.png")
 gameTop = Frame(gameScreen, width = WINDOW_WIDTH, height = 64, bg = '#11C3ED')
 gameTop.pack()
 Homebtn = Button(gameScreen,  image = ArrowImg, bg = '#11C3ED',activebackground = '#11C3ED',  command = close_game)
@@ -1067,22 +1067,22 @@ liveslbl2.place(x = WINDOW_WIDTH - 105, y = 6)
 liveslbl3 = Label(gameScreen, image = livesImg, bg = '#11C3ED')
 liveslbl3.place(x = WINDOW_WIDTH - 155, y = 6)
 #create all photoImage variables
-PBImg = PhotoImage(file = "New folder/PBButton.png")
-PBGImg = PhotoImage(file = 'New folder/PBGButton.png')
-PSImg = PhotoImage(file = 'New folder/PSButton.png')
-PSGImg = PhotoImage(file = 'New folder/PSGButton.png')
-PCImg = PhotoImage(file = 'New folder/PCButton.png')
-PCGImg = PhotoImage(file = 'New folder/PCGButton.png')
-CAImg = PhotoImage(file = 'New folder/CAButton.png')
-CAGImg = PhotoImage(file = 'New folder/CAGButton.png')
-PGImg = PhotoImage(file = 'New folder/PGButton.png')
-PGGImg = PhotoImage(file = 'New folder/PGGButton.png')
-LivesLabelImg = PhotoImage(file = 'New folder/Lives.png')
-PlayImg = PhotoImage(file = "New folder/PlayButton.png")
-HelpImg = PhotoImage(file = "New folder/HelpButton.png")
-ExitImg = PhotoImage(file = "New folder/ExitButton.png")
-GuyImg = PhotoImage(file = "New folder/MenuPic.png")
-helpMenuImg = PhotoImage(file = "New folder/HelpMenu.png")
+PBImg = PhotoImage(file = "img/PBButton.png")
+PBGImg = PhotoImage(file = 'img/PBGButton.png')
+PSImg = PhotoImage(file = 'img/PSButton.png')
+PSGImg = PhotoImage(file = 'img/PSGButton.png')
+PCImg = PhotoImage(file = 'img/PCButton.png')
+PCGImg = PhotoImage(file = 'img/PCGButton.png')
+CAImg = PhotoImage(file = 'img/CAButton.png')
+CAGImg = PhotoImage(file = 'img/CAGButton.png')
+PGImg = PhotoImage(file = 'img/PGButton.png')
+PGGImg = PhotoImage(file = 'img/PGGButton.png')
+LivesLabelImg = PhotoImage(file = 'img/Lives.png')
+PlayImg = PhotoImage(file = "img/PlayButton.png")
+HelpImg = PhotoImage(file = "img/HelpButton.png")
+ExitImg = PhotoImage(file = "img/ExitButton.png")
+GuyImg = PhotoImage(file = "img/MenuPic.png")
+helpMenuImg = PhotoImage(file = "img/HelpMenu.png")
 
 # Create and pack a Canvas object that doubles as the playable area
 gameBackground = Canvas(gameScreen, width = WINDOW_WIDTH, height = WINDOW_HEIGHT - 224, highlightthickness = 0)
@@ -1167,7 +1167,7 @@ mainMenu.resizable(False, False)
 mainMenu.protocol('WM_DELETE_WINDOW', close_mainMenu)
 
 #place the title on the main menu screen
-MainName = PhotoImage(file = "New folder/Name.png")
+MainName = PhotoImage(file = "img/Name.png")
 canvas = Canvas(mainMenu, width = 900, height = 250, highlightthickness = 0)
 canvas.pack()
 canvas.create_image(0, 0, image = MainName, anchor = "nw")
